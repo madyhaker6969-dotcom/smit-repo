@@ -35,3 +35,23 @@ git add.
 git --help
 github 
 github .
+sudo apt update && sudo apt install git -y
+git init
+git add index.html
+ls
+ls -la
+git init
+git add p.html
+git add .
+git add p.html
+git status
+git commit -m "Added assignment code"
+git branch -M main
+git remote add origin https://github.com/mahadali.dev/madyhaker6969@.git
+git push -u origin main
+git remote remove origin
+git remote add origin https://github.com/madyhaker6969-dotcom/smit-repo.git
+git push -u origin main
+git push -u origin main --force
+[200~git push -u origin main --force~
+git push -u origin main --force
