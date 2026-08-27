@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Web Development Assignments</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .assignment-card {
+            background-color: #ffffff;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .assignment-card h2 {
+            margin-top: 0;
+            color: #0066cc;
+        }
+
+        .assignment-card p {
+            color: #555;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Simple Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .modal-box {
+            background-color: white;
+            width: 80%;
+            height: 80%;
+            margin: 5% auto;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .close-btn {
+            background-color: #dc3545;
+            float: right;
+        }
+
+        .close-btn:hover {
+            background-color: #c82333;
+        }
+
+        iframe {
+            width: 100%;
+            height: 90%;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Syed Mahad Ali's Portfolio</h1>
+    <p class="subtitle">HTML & CSS Web Development Assignments</p>
+
+    <!-- Assignment 1 -->
+    <div class="assignment-card">
+        <h2>Assignment 1: Cars Hub</h2>
+        <p>A basic HTML web page with headings, paragraphs, and text formatting tags showing car parts information.</p>
+        <button onclick="showPreview('assign1')">View Assignment</button>
+    </div>
+
+    <!-- Assignment 2 -->
+    <div class="assignment-card">
+        <h2>Assignment 2: Rev Nation</h2>
+        <p>A multi-page website with navigation links, lists, and images displaying car services and features.</p>
+        <button onclick="showPreview('assign2_main')">Rev Nation Main</button>
+        <button onclick="showPreview('assign2_home')">Home Page</button>
+        <button onclick="showPreview('assign2_service')">Services Page</button>
+    </div>
+
+    <!-- Assignment 3 -->
+    <div class="assignment-card">
+        <h2>Assignment 3: Personal Resume</h2>
+        <p>My CV containing career goals, an education table, and bulleted lists of my technical skills.</p>
+        <button onclick="showPreview('assign3')">View Resume</button>
+    </div>
+
+    <!-- Assignment 4 -->
+    <div class="assignment-card">
+        <h2>Assignment 4: HTML Chessboard</h2>
+        <p>An 8x8 chessboard created using HTML table tags and CSS background colors for the light and dark squares.</p>
+        <button onclick="showPreview('assign4')">View Chessboard</button>
+    </div>
+
+    <!-- Assignment 5 -->
+    <div class="assignment-card">
+        <h2>Assignment 5: Contact & Review Forms</h2>
+        <p>HTML forms demonstrating fieldsets, legends, input textboxes, select dropdowns, and textareas.</p>
+        <button onclick="showPreview('assign5')">View Forms</button>
+    </div>
+
+    <!-- Assignment 6 -->
+    <div class="assignment-card">
+        <h2>Assignment 6: Student Registration Form</h2>
+        <p>A full student registration form including radio buttons, checkboxes, date pickers, and file upload controls.</p>
+        <button onclick="showPreview('assign6')">View Registration Form</button>
+    </div>
+
+    <!-- Modal Box for Viewing Projects -->
+    <div id="myModal" class="modal">
+        <div class="modal-box">
+            <button class="close-btn" onclick="closePreview()">Close</button>
+            <iframe id="previewFrame"></iframe>
+        </div>
+    </div>
+
+    <script>
+        var assignments = {
+            assign1: `<!DOCTYPE html><html><head><style>body{font-family:sans-serif;padding:20px;}</style></head><body><h1>All about All car</h1><h4>just turbo and enjoy</h4><p>This web tell you all about cars and parts</p><p><b>all we say is just turbo and chill</b></p><h1>#Chill mode ON</h1><p>so all this web is about the info of cars and cars parts like <b>Turbo, Air intake, Suspension, Cat, Radiator, Shifters and so on</b></p><h2>Parts availability</h2><p><i>all parts are available on my web just contact me via email</i></p><h4><b>Only serious buyers will get reply</b></h4></body></html>`,
+            
+            assign2_main: `<!DOCTYPE html><html><head><style>body{font-family:sans-serif;padding:20px;text-align:center;}</style></head><body><h1>Rev Nation</h1><p>Drive loud Drive proud.</p><p>The world where cars are life</p><ul style="text-align:left;"><li><b>⚡ Premium Selection:</b> We curate high-grade electronics!</li><li><b>🔒 Enterprise Security:</b> Advanced encryption keeps data safe!</li><li><b>📦 Agile Distribution:</b> Real-time tracking to your door!</li></ul><nav><a href="#">Home</a> | <a href="#">About us</a> | <a href="#">Service</a></nav><br><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwrCFKpQtfGogtqdcrhTUIQqDBE2YAKYPQltc-gnZfo1lCpTa-CYZTEJnT&s=10" alt="Car"></body></html>`,
+            
+            assign2_home: `<!DOCTYPE html><html><head><style>body{font-family:sans-serif;padding:20px;}</style></head><body><nav><b>Home</b> | About Us | Services</nav><hr><h1>Welcome to CarsHub<sup>2026</sup></h1><h2>Your Dream Car Destination</h2><p>Welcome to <b>CarsHub</b>, the best place to find modern <i>vehicles</i>.</p><h4>Featured Categories</h4><ul><li>Sports Cars</li><li>Electric Vehicles</li><li>Family SUVs</li></ul></body></html>`,
+            
+            assign2_service: `<!DOCTYPE html><html><head><style>body{font-family:sans-serif;padding:20px;}</style></head><body><nav>Home | About Us | <b>Services</b></nav><hr><h3>Our Core Services</h3><p>At <b>CarsHub</b>, we offer automotive solutions.</p><h4>What We Offer:</h4><ul><li>Car Sales & Trade-ins</li><li>Full Vehicle Inspection</li></ul><h4>How to Book:</h4><ol><li>Fill out contact form.</li><li>Choose date.</li></ol></body></html>`,
+            
+            assign3: `<!DOCTYPE html><html><head><style>body{font-family:sans-serif;padding:20px;}table,th,td{border:1px solid black;border-collapse:collapse;padding:8px;}</style></head><body><h1>Syed Mahad Ali</h1><h3>Career Objective</h3><p>To obtain a challenging position in an organization where I can learn and contribute.</p><h3>Education</h3><table><tr><th>Degree</th><th>Institute / Board</th></tr><tr><td>Matric (BSEK)</td><td>Processing</td></tr><tr><td>SMIT</td><td>Web Development</td></tr></table><h3>Skills</h3><ul><li>HTML & CSS</li><li>Microsoft Word</li><li>Communication Skills</li></ul></body></html>`,
+
+            assign4: `<!DOCTYPE html><html><head><style>table{border-collapse:collapse;border:3px solid black;margin:20px auto;}td{width:50px;height:50px;text-align:center;}td img{width:40px;height:40px;}.light{background-color:#f0d9b5;}.dark{background-color:#b58863;}</style></head><body><h2 style="text-align:center;">HTML Chessboard</h2><table><tr><td class="light"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 45 45'><path d='M9 39h27v-3H9v3zm3-3h21v-4H12v4zm1.5-4h18l-1.5-4h-15l-1.5 4zm1.5-4h15l1-2H14l1 2zm-1-2h17v-3H14v3zm0-3h17l1.5-3H12.5L14 23zm-2.5-3h22v-3H11.5v3zM11 17h23v-3H11v3zm1-3h21v-3H12v3z' fill='%23000' stroke='%23000' stroke-width='1.5'/></svg>"></td><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td></tr><tr><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td></tr><tr><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td></tr><tr><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td></tr><tr><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td></tr><tr><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td></tr><tr><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td></tr><tr><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"></td><td class="dark"></td><td class="light"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 45 45'><path d='M9 39h27v-3H9v3zm3-3h21v-4H12v4zm1.5-4h18l-1.5-4h-15l-1.5 4zm1.5-4h15l1-2H14l1 2zm-1-2h17v-3H14v3zm0-3h17l1.5-3H12.5L14 23zm-2.5-3h22v-3H11.5v3zM11 17h23v-3H11v3zm1-3h21v-3H12v3z' fill='%23fff' stroke='%23000' stroke-width='1.5'/></svg>"></td></tr></table></body></html>`,
+
+            assign5: `<!DOCTYPE html><html><head><style>body{font-family:sans-serif;padding:20px;}</style></head><body><form><fieldset style="width:200px;"><legend>Contact details</legend><label>Email:</label><br><input type="email"><br><br><label>Mobile:</label><br><input type="tel"><br><br><label>Telephone:</label><br><input type="tel"></fieldset></form><hr><form><fieldset><legend>Your Details:</legend><label>Name:</label> <input type="text"><br><br><label>Email:</label> <input type="email"></fieldset><br><fieldset><legend>Your Review:</legend><p><label>How did you hear about us?</label> <select><option>Google</option><option>Social Media</option></select></p><p>Would you visit again?<br><input type="radio" name="v"> Yes <input type="radio" name="v"> No</p><p><label>Comments:</label><br><textarea rows="3" cols="30"></textarea></p><input type="submit" value="Submit review"></fieldset></form></body></html>`,
+
+            assign6: `<!DOCTYPE html><html><head><style>body{font-family:sans-serif;padding:20px;max-width:400px;}</style></head><body><h1>Student Registration Form</h1><form><label>Full Name:</label><br><input type="text"><br><br><label>Email:</label><br><input type="email"><br><br><label>Password:</label><br><input type="password"><br><br><label>Age:</label><br><input type="number"><br><br><label>Date of Birth:</label><br><input type="date"><br><br><label>Gender:</label><br><input type="radio" name="g"> Male <input type="radio" name="g"> Female<br><br><label>Select Course:</label><br><select><option>Web Development</option><option>Graphic Design</option></select><br><br><button type="submit">Register</button> <button type="reset">Reset</button></form></body></html>`
+        };
+
+        function showPreview(key) {
+            document.getElementById('previewFrame').srcdoc = assignments[key];
+            document.getElementById('myModal').style.display = 'block';
+        }
+
+        function closePreview() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
