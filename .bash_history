@@ -55,3 +55,29 @@ git push -u origin main
 git push -u origin main --force
 [200~git push -u origin main --force~
 git push -u origin main --force
+git add .
+git commit -m "Updated CSS with class selectors"
+git push origin main
+git -v
+git .
+rm
+am
+git -v
+git --help
+git -v
+help
+[200~ls~
+1s
+/bin/1s
+echo $PATH
+command -v bash
+pwd
+command -v find
+find ~ -type f -name "navbar.html" 2>/dev/null
+cd ~
+git init
+git add navbar.html
+git commit -m "Submit SMIT assignment"
+git remote add origin https://github.com/madyhaker6969-dotcom/smit-repo.git
+git remote set-url origin https://github.com/madyhaker6969-dotcom/smit-repo.git
+git push -u origin main

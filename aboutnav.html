@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - My Neon Site</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #0d0d1a;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #16162e;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      border-bottom: 2px solid #00f3ff;
+      box-shadow: 0 0 10px #00f3ff;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #00f3ff;
+      text-shadow: 0 0 5px #00f3ff;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover, nav a.active {
+      color: #ff007f;
+      text-shadow: 0 0 8px #ff007f;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #ff007f;
+      text-shadow: 0 0 10px #ff007f;
+      text-align: center;
+    }
+
+    .card {
+      background-color: #16162e;
+      border: 1px solid #ff007f;
+      box-shadow: 0 0 10px rgba(255, 0, 127, 0.3);
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .card h3 {
+      color: #00f3ff;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #b3b3cc;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">NeonSpace</div>
+    <nav>
+      <a href="navbar.html">Home</a>
+      <a href="aboutnav.html" class="active">About</a>
+      <a href="contactnav.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>About This Project</h1>
+    
+    <div class="card">
+      <h3>Easy to Understand</h3>
+      <p>This page uses clean, basic HTML structure so beginners can see how different files link together using the navbar.</p>
+    </div>
+
+    <div class="card">
+      <h3>Glowing Effects</h3>
+      <p>The soft glow effects are created using simple CSS properties like <code>text-shadow</code> and <code>box-shadow</code>.</p>
+    </div>
+  </div>
+
+</body>
+</html>
