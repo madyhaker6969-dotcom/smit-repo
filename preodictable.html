@@ -1,0 +1,608 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>My Periodic Table</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 30px;
+            color: #00aaff;
+        }
+
+        p {
+            color: #cccccc;
+        }
+
+        .table {
+            display: grid;
+            grid-template-columns: repeat(18, 60px);
+            gap: 5px;
+            justify-content: center;
+            margin: 30px auto;
+        }
+
+        .element {
+            width: 60px;
+            height: 65px;
+            border: 1px solid white;
+            border-radius: 5px;
+            background-color: #222222;
+            color: white;
+            cursor: pointer;
+            padding-top: 5px;
+            box-sizing: border-box;
+        }
+
+        .element:hover {
+            background-color: #004466;
+        }
+
+        .number {
+            font-size: 10px;
+            text-align: left;
+            margin-left: 5px;
+        }
+
+        .symbol {
+            font-size: 22px;
+            font-weight: bold;
+            color: #00aaff;
+        }
+
+        .name {
+            font-size: 9px;
+        }
+
+        .mass {
+            font-size: 8px;
+            color: #bbbbbb;
+        }
+
+        .empty {
+            width: 60px;
+            height: 65px;
+        }
+
+        .metal {
+            background-color: #442222;
+        }
+
+        .nonmetal {
+            background-color: #223d44;
+        }
+
+        .noble {
+            background-color: #352244;
+        }
+
+        .halogen {
+            background-color: #224422;
+        }
+
+        .special {
+            background-color: #443b22;
+        }
+
+        .info {
+            width: 400px;
+            max-width: 90%;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #151515;
+            border: 1px solid #00aaff;
+            border-radius: 10px;
+        }
+
+        .info h2 {
+            color: #00aaff;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Periodic Table of Elements</h1>
+
+    <p>Click on an element to see its information.</p>
+
+
+    <div class="table">
+
+
+        <!-- PERIOD 1 -->
+
+        <div class="element nonmetal"
+        onclick="showInfo('Hydrogen','H',1,'1.008')">
+
+            <div class="number">1</div>
+            <div class="symbol">H</div>
+            <div class="name">Hydrogen</div>
+            <div class="mass">1.008</div>
+
+        </div>
+
+
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+
+
+        <div class="element noble"
+        onclick="showInfo('Helium','He',2,'4.0026')">
+
+            <div class="number">2</div>
+            <div class="symbol">He</div>
+            <div class="name">Helium</div>
+            <div class="mass">4.0026</div>
+
+        </div>
+
+
+
+        <!-- PERIOD 2 -->
+
+        <div class="element metal"
+        onclick="showInfo('Lithium','Li',3,'6.94')">
+
+            <div class="number">3</div>
+            <div class="symbol">Li</div>
+            <div class="name">Lithium</div>
+            <div class="mass">6.94</div>
+
+        </div>
+
+
+        <div class="element special"
+        onclick="showInfo('Beryllium','Be',4,'9.0122')">
+
+            <div class="number">4</div>
+            <div class="symbol">Be</div>
+            <div class="name">Beryllium</div>
+            <div class="mass">9.0122</div>
+
+        </div>
+
+
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+
+
+        <div class="element special"
+        onclick="showInfo('Boron','B',5,'10.81')">
+
+            <div class="number">5</div>
+            <div class="symbol">B</div>
+            <div class="name">Boron</div>
+            <div class="mass">10.81</div>
+
+        </div>
+
+
+        <div class="element nonmetal"
+        onclick="showInfo('Carbon','C',6,'12.011')">
+
+            <div class="number">6</div>
+            <div class="symbol">C</div>
+            <div class="name">Carbon</div>
+            <div class="mass">12.011</div>
+
+        </div>
+
+
+        <div class="element nonmetal"
+        onclick="showInfo('Nitrogen','N',7,'14.007')">
+
+            <div class="number">7</div>
+            <div class="symbol">N</div>
+            <div class="name">Nitrogen</div>
+            <div class="mass">14.007</div>
+
+        </div>
+
+
+        <div class="element nonmetal"
+        onclick="showInfo('Oxygen','O',8,'15.999')">
+
+            <div class="number">8</div>
+            <div class="symbol">O</div>
+            <div class="name">Oxygen</div>
+            <div class="mass">15.999</div>
+
+        </div>
+
+
+        <div class="element halogen"
+        onclick="showInfo('Fluorine','F',9,'18.998')">
+
+            <div class="number">9</div>
+            <div class="symbol">F</div>
+            <div class="name">Fluorine</div>
+            <div class="mass">18.998</div>
+
+        </div>
+
+
+        <div class="element noble"
+        onclick="showInfo('Neon','Ne',10,'20.180')">
+
+            <div class="number">10</div>
+            <div class="symbol">Ne</div>
+            <div class="name">Neon</div>
+            <div class="mass">20.180</div>
+
+        </div>
+
+
+
+        <!-- PERIOD 3 -->
+
+        <div class="element metal"
+        onclick="showInfo('Sodium','Na',11,'22.990')">
+
+            <div class="number">11</div>
+            <div class="symbol">Na</div>
+            <div class="name">Sodium</div>
+            <div class="mass">22.990</div>
+
+        </div>
+
+
+        <div class="element special"
+        onclick="showInfo('Magnesium','Mg',12,'24.305')">
+
+            <div class="number">12</div>
+            <div class="symbol">Mg</div>
+            <div class="name">Magnesium</div>
+            <div class="mass">24.305</div>
+
+        </div>
+
+
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+
+
+        <div class="element special"
+        onclick="showInfo('Aluminium','Al',13,'26.982')">
+
+            <div class="number">13</div>
+            <div class="symbol">Al</div>
+            <div class="name">Aluminium</div>
+            <div class="mass">26.982</div>
+
+        </div>
+
+
+        <div class="element special"
+        onclick="showInfo('Silicon','Si',14,'28.085')">
+
+            <div class="number">14</div>
+            <div class="symbol">Si</div>
+            <div class="name">Silicon</div>
+            <div class="mass">28.085</div>
+
+        </div>
+
+
+        <div class="element nonmetal"
+        onclick="showInfo('Phosphorus','P',15,'30.974')">
+
+            <div class="number">15</div>
+            <div class="symbol">P</div>
+            <div class="name">Phosphorus</div>
+            <div class="mass">30.974</div>
+
+        </div>
+
+
+        <div class="element nonmetal"
+        onclick="showInfo('Sulfur','S',16,'32.06')">
+
+            <div class="number">16</div>
+            <div class="symbol">S</div>
+            <div class="name">Sulfur</div>
+            <div class="mass">32.06</div>
+
+        </div>
+
+
+        <div class="element halogen"
+        onclick="showInfo('Chlorine','Cl',17,'35.45')">
+
+            <div class="number">17</div>
+            <div class="symbol">Cl</div>
+            <div class="name">Chlorine</div>
+            <div class="mass">35.45</div>
+
+        </div>
+
+
+        <div class="element noble"
+        onclick="showInfo('Argon','Ar',18,'39.948')">
+
+            <div class="number">18</div>
+            <div class="symbol">Ar</div>
+            <div class="name">Argon</div>
+            <div class="mass">39.948</div>
+
+        </div>
+
+
+
+        <!-- PERIOD 4 -->
+
+        <div class="element metal"
+        onclick="showInfo('Potassium','K',19,'39.098')">
+
+            <div class="number">19</div>
+            <div class="symbol">K</div>
+            <div class="name">Potassium</div>
+            <div class="mass">39.098</div>
+
+        </div>
+
+
+        <div class="element special"
+        onclick="showInfo('Calcium','Ca',20,'40.078')">
+
+            <div class="number">20</div>
+            <div class="symbol">Ca</div>
+            <div class="name">Calcium</div>
+            <div class="mass">40.078</div>
+
+        </div>
+
+
+        <div class="element metal"
+        onclick="showInfo('Scandium','Sc',21,'44.956')">
+
+            <div class="number">21</div>
+            <div class="symbol">Sc</div>
+            <div class="name">Scandium</div>
+            <div class="mass">44.956</div>
+
+        </div>
+
+
+        <div class="element metal"
+        onclick="showInfo('Titanium','Ti',22,'47.867')">
+
+            <div class="number">22</div>
+            <div class="symbol">Ti</div>
+            <div class="name">Titanium</div>
+            <div class="mass">47.867</div>
+
+        </div>
+
+
+        <div class="element metal"
+        onclick="showInfo('Vanadium','V',23,'50.942')">
+
+            <div class="number">23</div>
+            <div class="symbol">V</div>
+            <div class="name">Vanadium</div>
+            <div class="mass">50.942</div>
+
+        </div>
+
+
+        <div class="element metal"
+        onclick="showInfo('Chromium','Cr',24,'51.996')">
+
+            <div class="number">24</div>
+            <div class="symbol">Cr</div>
+            <div class="name">Chromium</div>
+            <div class="mass">51.996</div>
+
+        </div>
+
+
+        <div class="element metal"
+        onclick="showInfo('Manganese','Mn',25,'54.938')">
+
+            <div class="number">25</div>
+            <div class="symbol">Mn</div>
+            <div class="name">Manganese</div>
+            <div class="mass">54.938</div>
+
+        </div>
+
+
+        <div class="element metal"
+        onclick="showInfo('Iron','Fe',26,'55.845')">
+
+            <div class="number">26</div>
+            <div class="symbol">Fe</div>
+            <div class="name">Iron</div>
+            <div class="mass">55.845</div>
+
+        </div>
+
+
+        <div class="element metal"
+        onclick="showInfo('Cobalt','Co',27,'58.933')">
+
+            <div class="number">27</div>
+            <div class="symbol">Co</div>
+            <div class="name">Cobalt</div>
+            <div class="mass">58.933</div>
+
+        </div>
+
+
+        <div class="element metal"
+        onclick="showInfo('Nickel','Ni',28,'58.693')">
+
+            <div class="number">28</div>
+            <div class="symbol">Ni</div>
+            <div class="name">Nickel</div>
+            <div class="mass">58.693</div>
+
+        </div>
+
+
+        <div class="element metal"
+        onclick="showInfo('Copper','Cu',29,'63.546')">
+
+            <div class="number">29</div>
+            <div class="symbol">Cu</div>
+            <div class="name">Copper</div>
+            <div class="mass">63.546</div>
+
+        </div>
+
+
+        <div class="element metal"
+        onclick="showInfo('Zinc','Zn',30,'65.38')">
+
+            <div class="number">30</div>
+            <div class="symbol">Zn</div>
+            <div class="name">Zinc</div>
+            <div class="mass">65.38</div>
+
+        </div>
+
+
+        <div class="element special"
+        onclick="showInfo('Gallium','Ga',31,'69.723')">
+
+            <div class="number">31</div>
+            <div class="symbol">Ga</div>
+            <div class="name">Gallium</div>
+            <div class="mass">69.723</div>
+
+        </div>
+
+
+        <div class="element special"
+        onclick="showInfo('Germanium','Ge',32,'72.630')">
+
+            <div class="number">32</div>
+            <div class="symbol">Ge</div>
+            <div class="name">Germanium</div>
+            <div class="mass">72.630</div>
+
+        </div>
+
+
+        <div class="element special"
+        onclick="showInfo('Arsenic','As',33,'74.922')">
+
+            <div class="number">33</div>
+            <div class="symbol">As</div>
+            <div class="name">Arsenic</div>
+            <div class="mass">74.922</div>
+
+        </div>
+
+
+        <div class="element nonmetal"
+        onclick="showInfo('Selenium','Se',34,'78.971')">
+
+            <div class="number">34</div>
+            <div class="symbol">Se</div>
+            <div class="name">Selenium</div>
+            <div class="mass">78.971</div>
+
+        </div>
+
+
+        <div class="element halogen"
+        onclick="showInfo('Bromine','Br',35,'79.904')">
+
+            <div class="number">35</div>
+            <div class="symbol">Br</div>
+            <div class="name">Bromine</div>
+            <div class="mass">79.904</div>
+
+        </div>
+
+
+        <div class="element noble"
+        onclick="showInfo('Krypton','Kr',36,'83.798')">
+
+            <div class="number">36</div>
+            <div class="symbol">Kr</div>
+            <div class="name">Krypton</div>
+            <div class="mass">83.798</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- INFORMATION BOX -->
+
+    <div class="info">
+
+        <h2 id="infoName">
+            Element Information
+        </h2>
+
+        <p id="infoText">
+            Click any element to see its information.
+        </p>
+
+    </div>
+
+
+    <script>
+
+        function showInfo(name, symbol, number, mass) {
+
+            document.getElementById("infoName").innerHTML =
+                name + " (" + symbol + ")";
+
+            document.getElementById("infoText").innerHTML =
+                "Atomic Number: " + number +
+                "<br>" +
+                "Atomic Mass: " + mass;
+
+        }
+
+    </script>
+
+</body>
+</html>
+```
